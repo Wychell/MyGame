@@ -1,0 +1,28 @@
+<div class="mat-elevation-z2">
+    <div class="grid-toolbar">
+        <button (click)="onClickAdd()" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="full-width-table" aria-label="Elements">
+        <ng-container *ngFor="let column of displayedColumnsFilter;let i = index" [matColumnDef]="column.id">
+            <th mat-header-cell *matHeaderCellDef>{{column.label}} </th>
+            <td [id]="i" mat-cell *matCellDef="let row">
+                <div *ngIf="!column.html"> {{column.format ? column.format(row) : row[column.id] }}</div>
+                <div *ngIf="column.html" [innerHTML]="(column.format ? column.format(row) : row[column.id])">
+                </div>
+                <div class="grid-action" *ngIf="column.id=='action' && column.action">
+                    <a *ngIf="column.action.edit" (click)="onClickEdit(row)">
+                        <mat-icon aria-hidden="false" aria-label="icon">edit</mat-icon>
+                    </a>
+                    <a *ngIf="column.action.delete" (click)="onClickDelete(row)">
+                        <mat-icon aria-hidden="false" aria-label="icon">delete</mat-icon>
+                    </a>
+                </div>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="bindLabel()"></tr>
+        <tr mat-row *matRowDef="let row; columns: bindLabel();"></tr>
+    </table>
+
+</div>

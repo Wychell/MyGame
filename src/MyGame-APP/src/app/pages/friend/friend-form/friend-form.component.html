@@ -1,0 +1,29 @@
+<div class="wrap-from">
+    <form [formGroup]="form" (submit)="onSubimit()" novalidate>
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" formControlName="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" formControlName="email" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Telefone</label>
+            <input type="text" formControlName="phone" class="form-control">
+        </div>
+        <div class="form-group">
+            <button mat-raised-button>{{isNew ? 'Cadastrar':'Alterar'}}</button>
+        </div>
+    </form>
+    <div *ngIf="!isNew" class="loans">
+        <label>Emprestimos</label>
+        <div class="grid-loands">
+            <app-simple-grid (onAdd)="addLoan()" (onDelete)="onClickEdit($event)" [displayedColumns]="colunas"
+                [data]="data">
+            </app-simple-grid>
+        </div>
+    </div>
+
+</div>

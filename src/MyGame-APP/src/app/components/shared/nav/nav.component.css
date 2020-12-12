@@ -1,0 +1,19 @@
+.navbar-nav {
+    float:none;
+    margin-left:5%;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+
+a {
+    font-weight: 550 ;
+}
+
+.nav-flex {
+    justify-content: space-between;
+}

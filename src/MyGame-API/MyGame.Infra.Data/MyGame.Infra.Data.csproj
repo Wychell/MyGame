@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201209220500_AddSeed.cs" />
+    <Compile Remove="Migrations\20201209220500_AddSeed.Designer.cs" />
+    <Compile Remove="Migrations\20201211121108_UsuarioSeed.cs" />
+    <Compile Remove="Migrations\20201211121108_UsuarioSeed.Designer.cs" />
+    <Compile Remove="Migrations\20201211121912_SeedData.cs" />
+    <Compile Remove="Migrations\20201211121912_SeedData.Designer.cs" />
+    <Compile Remove="Migrations\20201211121933_SeedData2.cs" />
+    <Compile Remove="Migrations\20201211121933_SeedData2.Designer.cs" />
+    <Compile Remove="Migrations\20201211121956_SeedData3.cs" />
+    <Compile Remove="Migrations\20201211121956_SeedData3.Designer.cs" />
+    <Compile Remove="Migrations\20201211122100_SeedData2.cs" />
+    <Compile Remove="Migrations\20201211122100_SeedData2.Designer.cs" />
+    <Compile Remove="Migrations\20201211122626_SeedData.cs" />
+    <Compile Remove="Migrations\20201211122626_SeedData.Designer.cs" />
+    <Compile Remove="Migrations\20201211122633_SeedData2.cs" />
+    <Compile Remove="Migrations\20201211122633_SeedData2.Designer.cs" />
+    <Compile Remove="Migrations\20201211122939_SeedData2.cs" />
+    <Compile Remove="Migrations\20201211122939_SeedData2.Designer.cs" />
+    <Compile Remove="Migrations\20201211122946_SeedData.cs" />
+    <Compile Remove="Migrations\20201211122946_SeedData.Designer.cs" />
+    <Compile Remove="Migrations\20201211123050_SeedData.cs" />
+    <Compile Remove="Migrations\20201211123050_SeedData.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyGame.Domain\MyGame.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

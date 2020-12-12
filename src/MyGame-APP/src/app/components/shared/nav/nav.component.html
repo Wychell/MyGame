@@ -1,0 +1,20 @@
+<nav *ngIf="user" class="navbar navbar-expand navbar-dark bg-dark">
+    <a class="navbar-brand" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  routerLink="/friend">Meus Jogos</a>
+    <div class="collapse navbar-collapse nav-flex" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item menu-item">
+                <a class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  routerLink="/friend">Amigos</a>
+            </li>
+            <li class="nav-item menu-item">
+                <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/game">Jogos</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item menu-item">
+            </li>
+            <li class="nav-item menu-item">
+                <a class="nav-link" (click)="logout()">Sair</a>
+            </li>
+        </ul>
+    </div>
+</nav>

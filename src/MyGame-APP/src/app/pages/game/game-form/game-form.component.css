@@ -1,0 +1,9 @@
+form {
+    display: flex;
+    width: 50%;
+    margin-top: 10px;
+    flex-direction: column;
+}
+.wrap-from{
+    display: flex;
+}

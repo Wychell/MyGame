@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mapper\AutoMapperConfig.cs~RFc17b44e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyGame.Domain\MyGame.Domain.csproj" />
+    <ProjectReference Include="..\MyGame.Infra.Security\MyGame.Infra.Security.csproj" />
+  </ItemGroup>
+
+</Project>

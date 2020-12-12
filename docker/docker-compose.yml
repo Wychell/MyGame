@@ -1,0 +1,54 @@
+version: '3.3'
+services:
+
+  sql-server-db:
+    image: mcr.microsoft.com/mssql/server
+    container_name: sql-server-db
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "sup3rp@ssw0rd"
+      ACCEPT_EULA: "Y"
+    networks:
+      - mygame-darknet
+    volumes:
+      - sqlvolume:/var/opt/mssql
+    restart: always
+
+  mygame-api:
+    container_name: mygame-api
+    image: mygamesapi
+    build:
+      context: ../src/MyGame-API
+      dockerfile: ./MyGames.Api/Dockerfile
+    restart: always
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5001
+    ports:
+      - "5001:5001"
+    depends_on:
+      - sql-server-db
+    networks:
+      - mygame-darknet  
+      
+  mygame-app:
+    container_name: mygame-app
+    image: mygameapp
+    build:
+      context: ../src/MyGame-APP
+      dockerfile: ./Dockerfile
+    restart: always    
+    ports:
+      - "80:80"
+    depends_on:
+      - mygame-api
+    networks:
+      - mygame-darknet  
+
+volumes:
+  sqlvolume:
+
+networks:
+  mygame-darknet:
+    driver: bridge      

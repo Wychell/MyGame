@@ -1,0 +1,21 @@
+.loans{
+    width: 50%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loans .grid-loands{
+    width: 90%;
+}
+
+form {
+  display: flex;
+  width: 50%;
+  margin-top: 10px;
+  flex-direction: column;
+}
+.wrap-from{
+  display: flex;
+}

@@ -1,0 +1,22 @@
+.grid-action {
+    display: flex;
+    justify-content: flex-end;
+}
+.grid-action a {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+}
+
+.grid-toolbar {
+    position: relative;
+    right: 0;
+    padding: 7px 30px;
+}
+
+.grid-toolbar button {
+    position: absolute;
+    right: 0;
+}
