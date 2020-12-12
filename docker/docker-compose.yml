@@ -25,6 +25,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ASPNETCORE_URLS=http://+:5001
+    healthcheck:
+      test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-Usa", "-Psup3rp@ssw0rd", "-Q", "select 1"]
+      interval: 5s
+      retries: 10
     ports:
       - "5001:5001"
     depends_on:
